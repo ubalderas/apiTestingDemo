@@ -1,0 +1,15 @@
+{
+  "name": "API-Testing-Demo",
+  "version": "0.0.1",
+  "description": "Example Test Automation Project for API Testing",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Usbaldo Balderas",
+  "dependencies": {
+    "chai": "^3.5.0"
+  }
+}
