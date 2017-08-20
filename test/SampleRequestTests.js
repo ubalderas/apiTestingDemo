@@ -22,12 +22,14 @@ describe("Test Suite for the '" + testService + "' service", function() {
     };
 
     it(testCaseObject.testDescription, function(done) {
+        testCaseObject["expectedResponse"] = require('./' + testService + "/expectedResponses/" + testCaseObject.testNumber + ".json");
         requestUtilities.getRequest(completeEndpointUrl)
-            .then( response => {
-                
+            .then( response => {                
                 assert.notEqual(response.body, undefined, "No response was received.");
                 testCaseObject["actualResponse"] = response.body;
-                validationLib.recordResults(testCaseObject, './test/results', testCaseObject.testNumber);
+                validationLib.recordResults(testCaseObject, './test/' + testService + '/testRunResults/fullTestCases', testCaseObject.testNumber);
+                validationLib.recordResults(testCaseObject.actualResponse, './test/' + testService + '/testRunResults/actualResponses', testCaseObject.testNumber);
+                validationLib.validateObjectsAreEqual(testCaseObject.actualResponse, testCaseObject.expectedResponse);
                 done();
             })
             .catch(done);
