@@ -1,0 +1,14 @@
+[
+  {
+    "testNumber": "POSTS-P001",
+    "testDescription": "Example 1: Should return a list of posts from jsonplaceholder",
+    "queryString": "",
+    "tags": ["P1", "POSTS"]
+  },
+  {
+    "testNumber": "POSTS-P002",
+    "testDescription": "Example 1: Should return a list of posts from User 1 only",
+    "queryString": "userId=1",
+    "tags": ["P1", "POSTS"]
+  }
+]

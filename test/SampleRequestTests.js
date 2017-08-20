@@ -5,14 +5,11 @@
 const requestUtilities = require('../lib/httpRequestUtilities');
 const validationLib = require('../lib/validationLibrary');
 const assert = require('assert');
-const testEndpointURL = "https://jsonplaceholder.typicode.com/";
-const testService = 'posts';
+const completeEndpointUrl = "https://jsonplaceholder.typicode.com/posts";
 
-describe("Test Suite for the '" + testService + "' service", function() {
+describe("Sample Test suite for the posts GET service", function() {
     this.timeout(5000);
     this.slow(1000);
-    let contentType = "application/json";
-    let completeEndpointUrl = testEndpointURL + testService;
 
     let testCaseObject = {
         "testURL": completeEndpointUrl,
@@ -22,13 +19,13 @@ describe("Test Suite for the '" + testService + "' service", function() {
     };
 
     it(testCaseObject.testDescription, function(done) {
-        testCaseObject["expectedResponse"] = require('./' + testService + "/expectedResponses/" + testCaseObject.testNumber + ".json");
+        testCaseObject["expectedResponse"] = require('./SampleService/expectedResponses/' + testCaseObject.testNumber + '.json');
         requestUtilities.getRequest(completeEndpointUrl)
             .then( response => {                
                 assert.notEqual(response.body, undefined, "No response was received.");
                 testCaseObject["actualResponse"] = response.body;
-                validationLib.recordResults(testCaseObject, './test/' + testService + '/testRunResults/fullTestCases', testCaseObject.testNumber);
-                validationLib.recordResults(testCaseObject.actualResponse, './test/' + testService + '/testRunResults/actualResponses', testCaseObject.testNumber);
+                validationLib.recordResults(testCaseObject, './test/SampleService/testRunResults/fullTestCases', testCaseObject.testNumber);
+                validationLib.recordResults(testCaseObject.actualResponse, './test/SampleService/testRunResults/actualResponses', testCaseObject.testNumber);
                 validationLib.validateObjectsAreEqual(testCaseObject.actualResponse, testCaseObject.expectedResponse);
                 done();
             })
