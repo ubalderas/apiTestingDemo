@@ -24,14 +24,14 @@ This folder contains JSON files which themselves contain collections of testCase
 The testCaseObjects contain properties that are used to identify a particular test, along with properties used to execute a test.
 Currently, testCaseObjects schemas exist for GET and POST requests testing, and follow the following format:
 
-####GET
-{
-    "testNumber": "The test Id of the test case.",
-    "testDescription": "A useful description of the outcome of the test",
-    "queryString": "A string representing the query parameters used to generate a request",
-    "itemId": "The id of a specific item to be retrieved, if supported by the API endpoint",
-    "tags": ["An array of strings that could be used to filter tests to be executed", "Example: POSTS"]
-}
+#### GET
+{\n
+    "testNumber": "The test Id of the test case.",\n
+    "testDescription": "A useful description of the outcome of the test",\n
+    "queryString": "A string representing the query parameters used to generate a request",\n
+    "itemId": "The id of a specific item to be retrieved, if supported by the API endpoint",\n
+    "tags": ["An array of strings that could be used to filter tests to be executed", "Example: POSTS"]\n
+}\n
 
 Note: tags, itemId and queryString are optional fields.
 
