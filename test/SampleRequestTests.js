@@ -1,5 +1,7 @@
 /**
- * Created by Usbaldo Balderas on 8/16/2017.
+ * This is a sample for a simple Test using a single testCaseObject defined here for clarity and for anyone to try out
+ * within the same file.
+ * Results are recorded in the SampleService folder.
  */
 "use strict";
 const requestUtilities = require('../lib/httpRequestUtilities');
@@ -20,7 +22,7 @@ describe("Sample Test suite for the posts GET service", function() {
 
     it(testCaseObject.testDescription, function(done) {
         testCaseObject["expectedResponse"] = require('./SampleService/expectedResponses/' + testCaseObject.testNumber + '.json');
-        requestUtilities.getRequest(completeEndpointUrl)
+        requestUtilities.getRequest(testCaseObject)
             .then( response => {                
                 assert.notEqual(response.body, undefined, "No response was received.");
                 testCaseObject["actualResponse"] = response.body;

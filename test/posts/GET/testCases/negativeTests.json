@@ -1,14 +1,14 @@
 [
   {
     "testNumber": "POSTS-N001",
-    "testDescription": "Example 1: Should return a list of posts from jsonplaceholder",
-    "queryString": "",
+    "testDescription": "Should return an empty list of posts from jsonplaceholder",
+    "queryString": "userId=12",
     "tags": ["P1", "POSTS"]
   },
   {
     "testNumber": "POSTS-N002",
-    "testDescription": "Example 1: Should return a list of posts from User 1 only",
-    "queryString": "userId=1",
+    "testDescription": "Should ignore bad query string and return full list of posts from jsonplaceholder",
+    "queryString": "blah",
     "tags": ["P1", "POSTS"]
   }
 ]

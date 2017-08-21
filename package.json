@@ -20,7 +20,6 @@
   "dependencies": {
     "chai": "^3.5.0",
     "deep-diff": "^0.3.8",
-    "fs-then": "^0.2.0",
     "mocha": "3.3.0",
     "superagent": "^3.5.2"
   }
