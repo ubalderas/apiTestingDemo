@@ -1,0 +1,15 @@
+[
+  {
+    "testNumber": "POSTS-N001",
+    "testDescription": "Should return a newly created post with only an id = 101",
+    "tags": ["P1", "posts", "POST"]
+  },
+  {
+    "testNumber": "POSTS-N002",
+    "testDescription": "Should also return a newly created post with only an id = 101",
+    "payload": {
+      "blah": "Invalid Key"
+    },
+    "tags": ["P1", "posts", "POST"]
+  }
+]

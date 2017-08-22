@@ -1,0 +1,48 @@
+[
+  {
+    "testNumber": "POSTS-P001",
+    "testDescription": "Should return a newly created post with only an id = 101",
+    "payload": "",
+    "tags": ["P1", "posts", "POST"]
+  },
+  {
+    "testNumber": "POSTS-P002",
+    "testDescription": "Should also return a newly created post with only an id = 101",
+    "payload": {},
+    "tags": ["P1", "posts", "POST"]
+  },
+  {
+    "testNumber": "POSTS-P003",
+    "testDescription": "Should return a newly created post with an id = 101 and a body property",
+    "payload": {
+      "body": "This is an example for test POSTS-P003"
+    },
+    "tags": ["P1", "posts", "POST"]
+  },
+  {
+    "testNumber": "POSTS-P004",
+    "testDescription": "Should return a newly created post with an id = 101 and a title property",
+    "payload": {
+      "title": "This is an example for title test POSTS-P004"
+    },
+    "tags": ["P1", "posts", "POST"]
+  },
+  {
+    "testNumber": "POSTS-P005",
+    "testDescription": "Should return a newly created post with an id = 101 and a userId property",
+    "payload": {
+      "userId": 1
+    },
+    "tags": ["P1", "posts", "POST"]
+  },
+  {
+    "testNumber": "POSTS-P006",
+    "testDescription": "Should return a newly created post with an id = 101, userId, title and body properties",
+    "payload": {
+      "userId": 1,
+      "title": "Positive Test 006",
+      "body": "Description for Test 006"
+    },
+    "tags": ["P1", "posts", "POST"]
+  }
+]
