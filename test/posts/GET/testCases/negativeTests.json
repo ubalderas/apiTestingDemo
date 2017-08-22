@@ -10,5 +10,30 @@
     "testDescription": "Should ignore bad query string and return full list of posts from jsonplaceholder",
     "queryString": "blah",
     "tags": ["P1", "POSTS"]
+  },
+  {
+    "testNumber": "POSTS-N003",
+    "testDescription": "Should generate an error for a missing item due to a bad expectedResponse to showcase error generation",
+    "queryString": "",
+    "tags": ["P1", "POSTS"]
+  },
+  {
+    "testNumber": "POSTS-N004",
+    "testDescription": "Should generate an error for a difference in values for an item within the collection of results due to a bad expectedResponse to showcase error generation",
+    "queryString": "",
+    "tags": ["P1", "POSTS"]
+  },
+  {
+    "testNumber": "POSTS-N005",
+    "testDescription": "Should generate an error for a difference in values for a single item due to a bad expectedResponse to showcase error generation",
+    "queryString": "",
+    "itemId": "1",
+    "tags": ["P1", "POSTS"]
+  },
+  {
+    "testNumber": "POSTS-N006",
+    "testDescription": "Should generate an error with a mix of missing item and difference in values to showcase error generation",
+    "queryString": "",
+    "tags": ["P1", "POSTS"]
   }
 ]
