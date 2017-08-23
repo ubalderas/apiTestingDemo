@@ -4,7 +4,9 @@ This repo contains examples of mocha tests used to test APIs using the 'superage
 
 ### Installing the API Testing Demo
 
-After you pull the repo to your machine, run an "npm install" on the root directory of the project to install the needed dependencies.
+* This is a node.js project, so you will need node installed on your computer. This project was developed with node version 4.4.4.
+* Download or clone the repo to your machine.
+* After you pull the repo to your machine, run an "npm install" on the root directory of the project to install the needed dependencies.
 
 ### Project Structure
 
