@@ -15,6 +15,11 @@ const assert = require('assert');
 const testEndpointURL = "https://jsonplaceholder.typicode.com/";
 const testService = 'users';
 
+// List of keys to be ignored during response validation. May be overwritten in a test by setting the testCaseObject 
+// ignoredKeys property. Commonly used to ignore dates, timestamps or authentication tokens on responses.
+const defaultIgnoredKeys = [
+    'id'
+];
 
 //This is the main mocha Test Suite used to test the specified service
 describe("Test Suite for the '" + testService + "' service", function() {
@@ -40,6 +45,9 @@ describe("Test Suite for the '" + testService + "' service", function() {
             //Adds the complete url for the test along with the expected response to the current testCaseObject
             testCaseObject["testURL"] = completeEndpointUrl;
             testCaseObject["expectedResponse"] = require(expectedResponsePath);
+
+            //Overwrites ignoredKeys if the testCaseObject specifies them
+            testCaseObject.ignoredKeys = testCaseObject.ignoredKeys ? testCaseObject.ignoredKeys : defaultIgnoredKeys;
             
             //Here is where the actual test gets executed, by first sending a request using the current testCaseObject
             requestUtilities.postRequest(testCaseObject)
@@ -73,6 +81,9 @@ describe("Test Suite for the '" + testService + "' service", function() {
             //Adds the complete url for the test along with the expected response to the current testCaseObject
             testCaseObject["testURL"] = completeEndpointUrl;
             testCaseObject["expectedResponse"] = require(expectedResponsePath);
+
+            //Overwrites ignoredKeys if the testCaseObject specifies them
+            testCaseObject.ignoredKeys = testCaseObject.ignoredKeys ? testCaseObject.ignoredKeys : defaultIgnoredKeys;
 
             //Here is where the actual test gets executed, by first sending a request using the current testCaseObject
             requestUtilities.postRequest(testCaseObject)
