@@ -3,6 +3,20 @@
     "testNumber": "USERS-P001",
     "testDescription": "Should return a list of users from jsonplaceholder",
     "queryString": "",
-    "tags": ["P1", "USERS"]
+    "tags": ["P1", "users"]
+  },
+  {
+    "testNumber": "USERS-P002",
+    "testDescription": "Should return user with id=6 'Mrs. Dennis Schulist'",
+    "queryString": "",
+    "itemId": "6",
+    "tags": ["P1", "users"]
+  },
+  {
+    "testNumber": "USERS-P003",
+    "testDescription": "Should return a users list, with only one item for id=6 'Mrs. Dennis Schulist'",
+    "queryString": "id=6",
+    "itemId": "",
+    "tags": ["P1", "users"]
   }
 ]
