@@ -3,32 +3,32 @@
     "testNumber": "POSTS-P001",
     "testDescription": "Should return a list of posts from jsonplaceholder",
     "queryString": "",
-    "tags": ["P1", "POSTS"]
+    "tags": ["P1", "posts"]
   },
   {
     "testNumber": "POSTS-P002",
     "testDescription": "Should return a list of posts from User 1 only",
     "queryString": "userId=1",
-    "tags": ["P1", "POSTS"]
+    "tags": ["P2", "posts"]
   },
   {
     "testNumber": "POSTS-P003",
     "testDescription": "Should return a list of posts from User 2 only",
     "queryString": "userId=2",
-    "tags": ["P1", "POSTS"]
+    "tags": ["P3", "posts"]
   },
   {
     "testNumber": "POSTS-P004",
     "testDescription": "Should return a single post with Id = 1",
     "queryString": "",
     "itemId": "1",
-    "tags": ["P1", "POSTS"]
+    "tags": ["P1", "posts", "singleItem"]
   },
   {
     "testNumber": "POSTS-P005",
     "testDescription": "Should return a single post with Id = 2",
     "queryString": "",
     "itemId": "2",
-    "tags": ["P1", "POSTS"]
+    "tags": ["P2", "posts", "singleItem"]
   }
 ]

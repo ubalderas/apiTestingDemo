@@ -13,13 +13,16 @@ const assert = require('assert');
 //environment variables when they're run through Jenkins jobs so that different test suites could be created using only
 //this Tester script.
 const testEndpointURL = "https://jsonplaceholder.typicode.com/";
-const testService = 'users';
+const testService = 'posts';
 
 // List of keys to be ignored during response validation. May be overwritten in a test by setting the testCaseObject 
 // ignoredKeys property. Commonly used to ignore dates, timestamps or authentication tokens on responses.
 const defaultIgnoredKeys = [
     'id'
 ];
+
+// The tagFilter can be used to run only testCaseObjects that contain it.
+const tagFilter = "";
 
 //This is the main mocha Test Suite used to test the specified service
 describe("Test Suite for the '" + testService + "' service", function() {
@@ -34,6 +37,9 @@ describe("Test Suite for the '" + testService + "' service", function() {
     
     //This iterates over the positiveTests collection, and creates a test case using the testDescription property.
     positiveTests.forEach(function(testCaseObject) {
+
+        if (tagFilter != "" && testCaseObject.tags.indexOf(tagFilter) < 0) return;
+        
         it(testCaseObject.testNumber + " - " + testCaseObject.testDescription, function(done) {
             
             //These variables are used to specify the directories where results will be saved, and where the expected
@@ -61,7 +67,7 @@ describe("Test Suite for the '" + testService + "' service", function() {
                     validationLib.recordResults(testCaseObject.actualResponse, actualResponsesDirPath, testCaseObject.testNumber);
                     
                     //Compare the expected and actual responses, and generate errors if they are found
-                    validationLib.validateObjectsAreEqual(testCaseObject.expectedResponse, testCaseObject.actualResponse);
+                    validationLib.validateObjectsAreEqual(testCaseObject.expectedResponse, testCaseObject.actualResponse, testCaseObject.ignoredKeys);
                     done();
                 })
                 .catch(done);
@@ -70,6 +76,9 @@ describe("Test Suite for the '" + testService + "' service", function() {
 
     //This iterates over the negativeTests collection, and creates a test case using the testDescription property.
     negativeTests.forEach(function(testCaseObject) {
+
+        if (tagFilter != "" && testCaseObject.tags.indexOf(tagFilter) < 0) return;
+
         it(testCaseObject.testNumber + " - " + testCaseObject.testDescription, function(done) {
 
             //These variables are used to specify the directories where results will be saved, and where the expected
@@ -97,7 +106,7 @@ describe("Test Suite for the '" + testService + "' service", function() {
                     validationLib.recordResults(testCaseObject.actualResponse, actualResponsesDirPath, testCaseObject.testNumber);
 
                     //Compare the expected and actual responses, and generate errors if they are found
-                    validationLib.validateObjectsAreEqual(testCaseObject.expectedResponse, testCaseObject.actualResponse);
+                    validationLib.validateObjectsAreEqual(testCaseObject.expectedResponse, testCaseObject.actualResponse, testCaseObject.ignoredKeys);
                     done();
                 })
                 .catch(done);
