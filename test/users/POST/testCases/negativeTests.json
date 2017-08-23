@@ -1,0 +1,7 @@
+[
+  {
+    "testNumber": "USERS-N001",
+    "testDescription": "Should return a newly created user with only an id = 11",
+    "tags": ["P1", "users", "POST"]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "testNumber": "USERS-P001",
+    "testDescription": "Should return a newly created user with id = 11 and the payload info",
+    "payload": {
+      "name": "Usbaldo Balderas",
+      "username": "doge_wow",
+      "email": "usbaldo.balderas@gmail.com",
+      "address": {
+        "street": "Esperanza Xing",
+        "suite": "",
+        "city": "Austin",
+        "zipcode": "78758",
+        "geo": {
+          "lat": "",
+          "lng": ""
+        }
+      },
+      "phone": "(512)555-5555",
+      "website": "https://github.com/ubalderas",
+      "company": {
+        "name": "Black Mesa",
+        "catchPhrase": "Zee API tester",
+        "bs": "Stuff and things"
+      }
+    },
+    "tags": ["P1", "posts", "POST"]
+  }
+]

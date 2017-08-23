@@ -13,7 +13,7 @@ const assert = require('assert');
 //environment variables when they're run through Jenkins jobs so that different test suites could be created using only
 //this Tester script.
 const testEndpointURL = "https://jsonplaceholder.typicode.com/";
-const testService = 'posts';
+const testService = 'users';
 
 
 //This is the main mocha Test Suite used to test the specified service
@@ -29,7 +29,7 @@ describe("Test Suite for the '" + testService + "' service", function() {
     
     //This iterates over the positiveTests collection, and creates a test case using the testDescription property.
     positiveTests.forEach(function(testCaseObject) {
-        it("Positive Test - " + testCaseObject.testDescription, function(done) {
+        it(testCaseObject.testNumber + " - " + testCaseObject.testDescription, function(done) {
             
             //These variables are used to specify the directories where results will be saved, and where the expected
             //response for this test case can be found.
@@ -62,7 +62,7 @@ describe("Test Suite for the '" + testService + "' service", function() {
 
     //This iterates over the negativeTests collection, and creates a test case using the testDescription property.
     negativeTests.forEach(function(testCaseObject) {
-        it("Negative Test - " + testCaseObject.testDescription, function(done) {
+        it(testCaseObject.testNumber + " - " + testCaseObject.testDescription, function(done) {
 
             //These variables are used to specify the directories where results will be saved, and where the expected
             //response for this test case can be found.

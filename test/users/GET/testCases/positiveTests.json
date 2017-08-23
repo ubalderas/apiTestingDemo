@@ -1,0 +1,8 @@
+[
+  {
+    "testNumber": "USERS-P001",
+    "testDescription": "Should return a list of users from jsonplaceholder",
+    "queryString": "",
+    "tags": ["P1", "USERS"]
+  }
+]
