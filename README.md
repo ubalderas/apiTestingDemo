@@ -1,6 +1,7 @@
 ## API Testing Demo Synopsis
 
 This repo contains examples of mocha tests used to test APIs using the 'superagent' node module to generate http requests, along with 'deep-diff' to compare and validate responses.
+The APIs that are being used as demos come from [jsonplaceholder](https://jsonplaceholder.typicode.com/), which has a bunch of example APIs useful for this exercise.
 
 ### Installing the API Testing Demo
 
